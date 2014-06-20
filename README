@@ -4,6 +4,8 @@ Environmentalist
 A simple module for configuring your node application. Defaults are provided
 and can then be overridden by environment variables.
 
+CI STATUS: https://travis-ci.org/BrandwatchLtd/environmentalist.svg
+
 Usage
 -----
 
@@ -127,6 +129,13 @@ standard node assertion library[2] and sinon[3].
 [1]: http://visionmedia.github.io/mocha/
 [2]: http://nodejs.org/api/assert.html
 [3]: http://sinonjs.org/docs/#assertions
+
+Travis CI
+---------
+
+We use Travis CI to verify every build. This can be viewed at any time at:
+
+    https://travis-ci.org/BrandwatchLtd/environmentalist
 
 Coding Style
 ----------
