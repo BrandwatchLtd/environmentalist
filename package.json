@@ -11,7 +11,7 @@
     "test": "mocha test",
     "lint": "jshint *.js **/*.js",
     "checkstyle": "jscs .",
-    "ci": "set -o pipefail; mocha test; jshint *.js **/*.js; jscs ."
+    "ci": "mocha test; jshint *.js **/*.js && echo 'No lint errors found.'; jscs ."
   },
   "keywords": [
     "config",
