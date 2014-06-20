@@ -13,12 +13,18 @@ A new config object is created using the Config constructor. Pass in your
 application defaults and the environment object.
 
     var Config = require('environmentalist');
-    var defaults = require('./config');
+    var defaults = {DATABASE_URL: 'postgres://user:pass@localhost/database'};
     var config = new Config(defaults, process.env);
+
+    config.get('DATABASE_URL');
 
 You can load your defaults any way you like, JSON is one example, but we prefer
 to use a plain old module. This allows you to have local variables and comments
 in your config file.
+
+    var defaults = require('./config.json');
+    var defaults = require('./config');
+    var defaults = require('./package.json').config;
 
 Retrieving Settings
 -------------------
