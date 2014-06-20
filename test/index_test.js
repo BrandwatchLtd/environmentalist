@@ -74,6 +74,13 @@ describe('config', function () {
             assert.equal(config.get('DEFAULT_VALUE'), 'overidden');
         });
 
+        it('extracts unprefixed keys even if they are not part of the default object', function () {
+            var config = createConfig({UNPREFIXED: 'foo'}, {
+                unprefixed: ['UNPREFIXED']
+            });
+            assert.equal(config.get('UNPREFIXED'), 'foo');
+        });
+
         it('coreces "true" and "false" environment variables into booleans', function () {
             var config = createConfig({IS_TRUE: 'true', IS_FALSE: 'false'});
             assert.strictEqual(config.get('IS_TRUE'), true);

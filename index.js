@@ -32,6 +32,13 @@ exports.Config = function Config(values, env, options) {
         }
     });
 
+    // Extract the unprefixed keys.
+    options.unprefixed.forEach(function (key) {
+        var envValue = has(env, key) ? coerce(env[key]) : null;
+        config[key] = envValue;
+    });
+
+    // Extract the default keys.
     Object.keys(values).forEach(function (key) {
         var envVar = prefix(key);
         var envValue = has(env, envVar) ? coerce(env[envVar]) : null;
