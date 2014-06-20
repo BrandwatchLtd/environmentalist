@@ -9,9 +9,8 @@
   },
   "scripts": {
     "test": "mocha test",
-    "lint": "jshint *.js **/*.js",
-    "checkstyle": "jscs .",
-    "ci": "mocha test; jshint *.js **/*.js && echo 'No lint errors found.'; jscs ."
+    "lint": "jshint --config .jshintrc --exclude-path .gitignore .",
+    "checkstyle": "jscs ."
   },
   "keywords": [
     "config",

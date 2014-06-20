@@ -143,6 +143,10 @@ We use Travis CI to verify every build. This can be viewed at any time at:
 
     https://travis-ci.org/BrandwatchLtd/environmentalist
 
+The script runner can be run before push by running:
+
+    $ ./script/cibuild
+
 Coding Style
 ----------
 

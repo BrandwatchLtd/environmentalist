@@ -1,0 +1,21 @@
+#!/bin/bash
+# CI runner for Travis CI
+
+export PATH=$(npm bin):$PATH
+
+pwd
+ls -al
+
+mocha test
+EXIT_CODE_UNIT=$?
+
+jshint --config=.jshintrc --exclude-path=.gitignore . && echo 'No lint errors found.'
+EXIT_CODE_LINT=$?
+
+jscs .
+EXIT_CODE_JSCS=$?
+
+# Check for errors in any of the runners.
+if [ $EXIT_CODE_UNIT -ne 0 ] || [ $EXIT_CODE_LINT -ne 0 ] || [ $EXIT_CODE_JSCS -ne 0 ]; then
+    exit 1
+fi
