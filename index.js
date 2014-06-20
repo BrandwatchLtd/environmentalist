@@ -32,6 +32,8 @@ exports.Config = function Config(values, env, options) {
         }
     });
 
+    options.unprefixed.concat(['PORT', 'NODE_ENV']);
+
     // Extract the unprefixed keys.
     options.unprefixed.forEach(function (key) {
         var envValue = has(env, key) ? coerce(env[key]) : null;

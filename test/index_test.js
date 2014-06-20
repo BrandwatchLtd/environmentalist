@@ -81,6 +81,13 @@ describe('config', function () {
             assert.equal(config.get('UNPREFIXED'), 'foo');
         });
 
+        it('ensures NODE_ENV and PORT are always unprefixed', function () {
+            var config = createConfig({PORT: 1234}, {
+                unprefixed: ['UNPREFIXED']
+            });
+            assert.equal(config.get('PORT'), 1234);
+        });
+
         it('coreces "true" and "false" environment variables into booleans', function () {
             var config = createConfig({IS_TRUE: 'true', IS_FALSE: 'false'});
             assert.strictEqual(config.get('IS_TRUE'), true);
