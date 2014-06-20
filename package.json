@@ -1,0 +1,30 @@
+{
+  "name": "environmentalist",
+  "version": "0.1.0",
+  "description": "A module for configuring node applications",
+  "main": "index.js",
+  "repository": "git@github.com:BrandwatchLtd/environmentalist.git",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test",
+    "lint": "jshint *.js **/*.js",
+    "checkstyle": "jscs .",
+    "ci": "set -o pipefail; mocha test; jshint *.js **/*.js; jscs ."
+  },
+  "keywords": [
+    "config",
+    "env",
+    "environment",
+    "vars"
+  ],
+  "author": "Aron Carroll <aron@brandwatch.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "jscs": "^1.5.3",
+    "jshint": "^2.5.1",
+    "mocha": "^1.20.1",
+    "sinon": "^1.10.2"
+  }
+}
