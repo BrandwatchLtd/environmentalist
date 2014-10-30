@@ -25,6 +25,19 @@ describe('config', function () {
         assert.equal(config.TEST, 'test');
     });
 
+    it('exposes the prefix', function () {
+        var prefix = 'DOGE';
+        var config = createConfig({}, {prefix: prefix});
+        assert.equal(config.prefix, prefix);
+    });
+
+    it('does not allow the prefix to be changed', function () {
+        var config = createConfig();
+        assert.throws(function () {
+            config.prefix = 'CANT OVERRIDE';
+        });
+    });
+
     describe('.get', function () {
         it('returns the value from the defaults object', function () {
             var config = createConfig();

@@ -91,6 +91,10 @@ exports.Config = function Config(values, env, options) {
         return options.version;
     };
 
+    Object.defineProperty(this, 'prefix', {
+        value: options.prefix
+    });
+
     function prefix(key) {
         var isUnprefixed = options.unprefixed.indexOf(key) > -1;
         var prefixed = options.prefix ? options.prefix.toUpperCase() + '_'  + key : key;
