@@ -132,7 +132,7 @@ Unit tests can be run using npm:
 Tests are located in the test directory and run using Mocha[1] and we use the
 standard node assertion library[2] and sinon[3].
 
-[1]: http://visionmedia.github.io/mocha/
+[1]: http://mochajs.org/
 [2]: http://nodejs.org/api/assert.html
 [3]: http://sinonjs.org/docs/#assertions
 
